@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Laptop Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-wrapper {
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .cart-item img {
+            width: 300px;
+            height: auto;
+        }
+
+        .cart-info {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cart-price {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .cart-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #cart-container {
+            margin-top: 20px;
+        }
+
+        #checkout-selected {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #checkout-selected button {
+            padding: 12px 20px;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./img/logo.png" alt="Laptop Store Logo"></a>
+            <h1>Laptop Store</h1>
+        </div>
+        <nav>
+            <a href="index.html#home">Home</a>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="./cart.html">Cart</a>
+            <a href="./checkout.html">Check Out</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart-container">
+            <p>Your cart is currently empty.</p>
+        </div>
+        <div id="checkout-selected">
+            <button onclick="proceedToCheckout()">Buy Selected Items</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Laptop Store. All rights reserved.</p>
+    </footer>
+    <div id="chatbox">
+        <button id="close-chatbox" onclick="toggleChatbox()">X</button>
+        <h4>AI Chatbot</h4>
+        <div id="chatbox-messages"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <button id="toggle-chatbox" onclick="toggleChatbox()">Chat with AI</button>
+    <script src="./app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-container');
+            const checkoutSelected = document.getElementById('checkout-selected');
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is currently empty. <a href="index.html#products">Buy Products</a></p>';
+                return;
+            }
+
+            cartContainer.innerHTML = cart
+                .map((item, index) => `
+                    <div class="cart-item">
+                        <input type="checkbox" class="cart-select" data-index="${index}">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-info">
+                            <p><strong>${item.name}</strong></p>
+                            <p>Specifications: ${item.specs}</p>
+                            <p>Warranty: ${item.warranty}</p>
+                        </div>
+                        <div class="cart-price">${item.price}</div>
+                        <div class="cart-actions">
+                            <button onclick="removeFromCart(${index})">Remove</button>
+                            <button onclick="buyNow(${index})">Buy Now</button>
+                        </div>
+                    </div>
+                `)
+                .join('');
+
+            checkoutSelected.style.display = 'block';
+        });
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+
+        function buyNow(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const selectedItem = cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('selectedCart', JSON.stringify(selectedItem));
+            window.location.href = 'checkout.html';
+        }
+
+        function proceedToCheckout() {
+            const selectedIndexes = Array.from(document.querySelectorAll('.cart-select:checked'))
+                .map(checkbox => parseInt(checkbox.dataset.index));
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const selectedItems = selectedIndexes.map(index => cart[index]);
+            const remainingItems = cart.filter((_, index) => !selectedIndexes.includes(index));
+
+            if (selectedItems.length > 0) {
+                localStorage.setItem('selectedCart', JSON.stringify(selectedItems));
+                localStorage.setItem('cart', JSON.stringify(remainingItems));
+                window.location.href = 'checkout.html';
+            } else {
+                alert('Please select items to buy!');
+            }
+        }
+    </script>
+</body>
+</html>

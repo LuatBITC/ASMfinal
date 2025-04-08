@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html"><img src="./img/logo.png" alt="Laptop Store Logo"></a>
+            <h1>Laptop Store</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+            <a href="./cart.html">Cart</a>
+            <a href="./checkout.html">Check Out</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <section id="home">
+            <div class="banner ">
+                <img src="./img/DALL·E 2025-01-15 22.25.06 - A modern and sleek banner design for a laptop shop named VLVSHOP. The banner features high-resolution images of premium laptops, incorporating a black.webp" alt="Shop Banner">
+            </div>
+            <h2>Welcome to Our Laptop Store</h2>
+        </section>
+        
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product" data-id="1">
+                    <img src="./img/anh1.webp" alt="Lenovo Intel Core i5 11th Gen">
+                    <h3>Lenovo Intel Core i5 11th Gen</h3>
+                    <p>Price: 62.990$</p>
+                    </p>
+                    <button onclick="addToCart(1)">Add to Cart</button>
+                    <button onclick="buyNow(1)">Buy Now</button>
+                </div>
+                <div class="product" data-id="2">
+                    <img src="./img/anh2.webp" alt="Lenovo V15 G2 Core i3 11th Gen">
+                    <h3>Lenovo V15 G2 Core i3 11th Gen</h3>
+                    <p>Price: 37.500$</p>
+                    <button onclick="addToCart(2)">Add to Cart</button>
+                    <button onclick="buyNow(2)">Buy Now</button>
+                </div>
+                <div class="product" data-id="3">
+                    <img src="./img/anh3.webp" alt="ASUS TUF Gaming F15 Core i5 10th Gen">
+                    <h3>ASUS TUF Gaming F15 Core i5 10th Gen</h3>
+                    <p>Price: 49.990$</p>
+                    <button onclick="addToCart(3)">Add to Cart</button>
+                    <button onclick="buyNow(3)">Buy Now</button>
+                </div>
+
+                <div class="product" data-id="4">
+                    <img src="./img/anh4.webp" alt="ASUS VivoBook 15 (2022) Core i3 10th Gen">
+                    <h3>ASUS VivoBook 15 (2022) Core i3 10th Gen</h3>
+                    <p>Price: 33.990$</p>
+                    <button onclick="addToCart(4)">Add to Cart</button>
+                    <button onclick="buyNow(4)">Buy Now</button>
+                </div>
+                <div class="product" data-id="5">
+                    <img src="./img/anh5.jpg" alt="Lenovo Athlon Dual Core">
+                    <h3>Lenovo Athlon Dual Core</h3>
+                    <p>Price: 18.990$</p>
+                    <button onclick="addToCart(5)">Add to Cart</button>
+                    <button onclick="buyNow(5)">Buy Now</button>
+                </div>
+                <div class="product" data-id="6">
+                    <img src="./img/anh6.jpg" alt="APPLE 2020 Macbook Air M1">
+                    <h3>APPLE 2020 Macbook Air M1</h3>
+                    <p>Price: 86.990$</p>
+                    <button onclick="addToCart(6)">Add to Cart</button>
+                    <button onclick="buyNow(6)">Buy Now</button>
+                </div>
+
+                <div class="product" data-id="7">
+                    <img src="./img/anh7.jpg" alt="ASUS VivoBook 14 (2021) Celeron Dual Core">
+                    <h3>ASUS VivoBook 14 (2021) Celeron Dual Core</h3>
+                    <p>Price: 23.990$</p>
+                    <button onclick="addToCart(7)">Add to Cart</button>
+                    <button onclick="buyNow(7)">Buy Now</button>
+                </div>
+                <div class="product" data-id="8">
+                    <img src="./img/anh8.webp" alt="DELL Vostro Ryzen 3 Quad Core 5425U">
+                    <h3>DELL Vostro Ryzen 3 Quad Core 5425U</h3>
+                    <p>Price: 36.890$</p>
+                    <button onclick="addToCart(8)">Add to Cart</button>
+                    <button onclick="buyNow(8)">Buy Now</button>
+                </div>
+                <div class="product" data-id="9">
+                    <img src="./img/anh9.png" alt="Lenovo V15 G2 Core i3 11th Gen">
+                    <h3>Lenovo V15 G2 Core i3 11th Gen</h3>
+                    <p>Price: 33.999$</p>
+                    <button onclick="addToCart(9)">Add to Cart</button>
+                    <button onclick="buyNow(9)">Buy Now</button>
+                </div>
+
+                <div class="product" data-id="10">
+                    <img src="./img/anh10.jpg" alt="RedmiBook Pro Core i5 11th Gen">
+                    <h3>RedmiBook Pro Core i5 11th Gen</h3>
+                    <p>Price: 38.990$</p>
+                    <button onclick="addToCart(10)">Add to Cart</button>
+                    <button onclick="buyNow(10)">Buy Now</button>
+                </div>
+                <div class="product" data-id="11">
+                    <img src="./img/anh11.webp" alt="acer Aspire 3 Ryzen 3 Dual Core 3250U">
+                    <h3>acer Aspire 3 Ryzen 3 Dual Core 3250U</h3>
+                    <p>Price: 26.990$</p>
+                    <button onclick="addToCart(11)">Add to Cart</button>
+                    <button onclick="buyNow(11)">Buy Now</button>
+                </div>
+                <div class="product" data-id="12">
+                    <img src="./img/ah12.webp" alt="ASUS Vivobook 14 (2022) Core i5 12th Gen">
+                    <h3>ASUS Vivobook 14 (2022) Core i5 12th Gen</h3>
+                    <p>Price: 66.990$</p>
+                    <button onclick="addToCart(12)">Add to Cart</button>
+                    <button onclick="buyNow(12)">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="product-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <img id="popup-image" src="" alt="Product Image">
+            <div id="popup-info"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Laptop Store. All rights reserved.</p>
+    </footer>
+
+    <div id="chatbox">
+        <button id="close-chatbox" onclick="toggleChatbox()">X</button>
+        <h4>AI Chatbot</h4>
+        <div id="chatbox-messages"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <button id="toggle-chatbox" onclick="toggleChatbox()">Chat with AI</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
