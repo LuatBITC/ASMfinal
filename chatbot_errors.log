@@ -452,3 +452,18 @@
 [19-Mar-2025 16:38:40 Europe/Berlin] Search criteria: {"max_price":20000000}
 [19-Mar-2025 16:38:40 Europe/Berlin] Converting price from VND: 20000000 to Rs: 68966
 [19-Mar-2025 16:38:40 Europe/Berlin] Price-based search results count: 580
+[08-Apr-2025 03:46:15 Europe/Berlin] Search criteria: {"max_price":20000000}
+[08-Apr-2025 03:46:15 Europe/Berlin] Converting price from VND: 20000000 to Rs: 68966
+[08-Apr-2025 03:46:15 Europe/Berlin] Price-based search results count: 581
+[10-Apr-2025 03:19:59 Europe/Berlin] Search criteria: {"max_price":15000000}
+[10-Apr-2025 03:19:59 Europe/Berlin] Converting price from VND: 15000000 to Rs: 51724
+[10-Apr-2025 03:19:59 Europe/Berlin] Price-based search results count: 340
+[11-Apr-2025 09:50:36 Europe/Berlin] Search criteria: {"max_price":20000000}
+[11-Apr-2025 09:50:36 Europe/Berlin] Converting price from VND: 20000000 to Rs: 68966
+[11-Apr-2025 09:50:36 Europe/Berlin] Price-based search results count: 581
+[11-Apr-2025 09:51:10 Europe/Berlin] Search criteria: {"max_price":40000000}
+[11-Apr-2025 09:51:10 Europe/Berlin] Converting price from VND: 40000000 to Rs: 137931
+[11-Apr-2025 09:51:10 Europe/Berlin] Price-based search results count: 850
+[13-Apr-2025 08:05:46 Europe/Berlin] Search criteria: {"name":"mac","max_price":30000000}
+[13-Apr-2025 08:05:46 Europe/Berlin] Converting price from VND: 30000000 to Rs: 103448
+[13-Apr-2025 08:05:47 Europe/Berlin] Price-based search results count: 764

@@ -303,6 +303,13 @@ function updateDatabaseSchema()
         // Start transaction
         $pdo->beginTransaction();
 
+        // Check if db.sql file exists
+        if (!file_exists('db.sql')) {
+            // If file doesn't exist, skip the update
+            $pdo->commit();
+            return true;
+        }
+
         // Read SQL file
         $sql = file_get_contents('db.sql');
 
